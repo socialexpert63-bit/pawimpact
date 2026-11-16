@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>PawImpact – Pet Cause Marketing (Demo Concept)</title>
+<meta property="og:title" content="PawImpact: pet cause marketing (demo concept)"><meta property="og:description" content="Connect pet brands, shelters and youth programs with honest impact reporting."><meta name="theme-color" content="#14213d"><meta name="description" content="Demo concept: a platform connecting pet brands, shelters and youth programs.">
+<style>
+:root{--bg:#faf5ea;--card:#fffdf8;--ink:#14213d;--mut:#5d6578;--line:#e8dfcc;--co:#e8664a;--or:#f2994a;--teal:#2a9d8f;--gray:#eceae4;--navy:#14213d}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101626;--card:#182036;--ink:#f3eee3;--mut:#9aa3b8;--line:#2a3452;--gray:#1b2440}}:root[data-theme="dark"]{--bg:#101626;--card:#182036;--ink:#f3eee3;--mut:#9aa3b8;--line:#2a3452;--gray:#1b2440}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+header .w{display:flex;align-items:center;justify-content:space-between;height:62px}
+header nav a{color:var(--ink);text-decoration:none;margin-left:18px;font-size:14px}header nav a:hover{color:var(--co)}.logo{font-weight:800;font-size:19px;color:var(--ink);text-decoration:none}
+.btn{display:inline-block;background:var(--co);color:#fff!important;padding:11px 20px;border-radius:12px;font:inherit;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.s{background:var(--gray);color:var(--ink)!important}.btn.w2{background:#fff;color:var(--navy)!important}
+.hero{background:radial-gradient(circle at 80% 20%,#2a9d8f 0,transparent 45%),var(--navy);color:#fff;padding:72px 0 80px}
+.hero .w{display:grid;gap:36px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(34px,5.5vw,58px);line-height:1.04;margin:0 0 16px;letter-spacing:-.03em}.hero p{font-size:18px;opacity:.92;max-width:520px}
+.live{background:#ffffff14;border:1px solid #ffffff30;border-radius:22px;padding:20px;backdrop-filter:blur(6px)}
+.live .row{display:flex;justify-content:space-between;font-size:14px;margin-top:12px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#5eead4;margin-right:6px;animation:pl 1s infinite alternate}@keyframes pl{to{opacity:.3}}
+section{padding:60px 0}h2{font-size:32px;margin:0 0 10px;letter-spacing:-.02em;line-height:1.15}.lead{color:var(--mut);max-width:640px;margin:0}
+section:nth-of-type(even){background:var(--gray)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}.card h3{margin:6px 0}
+.bar{height:8px;background:var(--gray);border-radius:99px;overflow:hidden;margin:12px 0 6px}section:nth-of-type(even) .bar{background:var(--line)}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--or));width:0;transition:width 1.2s ease}
+.tag{font-size:12px;padding:2px 10px;border-radius:99px;background:#2a9d8f26;color:var(--teal);display:inline-block}.tag.o{background:#e8664a26;color:var(--co)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}.tabs button,.chips button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:99px;cursor:pointer}.tabs .on,.chips .on{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:20px 0}.flow button{font:inherit;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:14px;cursor:pointer}.flow .on{border-color:var(--co)}.flow span{color:var(--mut)}
+.dog{height:120px;border-radius:14px;display:grid;place-items:center;font-size:60px;margin-bottom:10px}
+.stats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));text-align:center}.stats b{font-size:38px;display:block;letter-spacing:-.02em}
+.cd{display:flex;gap:12px}.cd div{background:var(--navy);color:#fff;border-radius:14px;padding:12px 16px;text-align:center;min-width:76px}.cd b{font-size:28px;display:block}
+.pk{display:flex;flex-direction:column;gap:6px}.pk b.p{font-size:26px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}
+.note{background:#dcebf5;color:#14213d;border-radius:10px;padding:10px 14px;font-size:14px;margin:18px 0}
+form{display:grid;gap:10px;max-width:440px;margin-top:20px}input,select{font:inherit;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+footer{padding:28px 0;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+@media(max-width:800px){.hero .w{grid-template-columns:1fr}header nav a:not(.btn){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+#pg{position:fixed;top:0;left:0;height:3px;background:var(--co);width:0;z-index:9}
+.ic{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 11px;cursor:pointer;margin-left:10px}.mb{display:none}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:14px 0;margin-top:10px}.mq div{display:flex;gap:44px;width:max-content;animation:mq 28s linear infinite;color:var(--mut);font-weight:600}@keyframes mq{to{transform:translateX(-50%)}}
+input[type=range]{width:100%;padding:0;accent-color:var(--co)}
+.big{font-size:30px;font-weight:800;display:block;letter-spacing:-.02em}
+.sc{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.q{font-size:17px}.q small{color:var(--mut);display:block;margin-top:8px}
+.bt{position:fixed;right:18px;bottom:18px;display:none;z-index:6}
+@media(max-width:800px){.mb{display:inline-block}header nav.open{display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:var(--bg);padding:14px 20px;border-bottom:1px solid var(--line)}header nav.open a:not(.btn){display:block;margin:8px 0}}
+.di{width:100%;height:150px;object-fit:contain;border-radius:14px;background:var(--gray);margin-bottom:10px}.hh{max-width:440px;width:100%;display:block;margin-top:28px}.fl2{display:flex;align-items:center;gap:8px}
+.bt{bottom:78px}#cfab{position:fixed;right:18px;bottom:18px;z-index:8;border-radius:99px;box-shadow:0 6px 20px #0004;padding:12px 18px}
+#cw{position:fixed;right:0;top:0;bottom:0;width:min(380px,100%);background:var(--card);border-left:1px solid var(--line);z-index:12;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .25s}#cw.open{transform:none}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.cm{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.mm{padding:10px 12px;border-radius:14px;max-width:92%;font-size:14px;line-height:1.5}.mm.a{background:var(--gray)}.mm.u{background:var(--ink);color:var(--bg);align-self:flex-end}
+.cq{display:flex;gap:6px;flex-wrap:wrap;padding:8px 14px}.cq .ic{font-size:12px;padding:5px 10px;margin:0}.cf{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}.cf input{flex:1;min-width:0}
+#stf{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:end;margin-bottom:14px}#stf label{display:grid;gap:4px;font-size:14px}#so{white-space:pre-wrap;min-height:110px;font-size:16px}
+.skip{position:absolute;left:-999px;top:0;background:var(--co);color:#fff;padding:8px 14px;z-index:30}.skip:focus{left:8px;top:8px}
+.tr{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;font-size:14px;opacity:.9}
+.aud h3{margin:0 0 8px}.aud ul{margin:10px 0 16px;padding-left:20px}.aud li{margin:4px 0}
+.big2{font-size:26px;display:block;letter-spacing:-.02em;margin-top:6px}
+.tlc b{display:block;color:var(--co)}.ct{width:100%;border-collapse:collapse}.ct th,.ct td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}.ct th{color:var(--mut);font-weight:500}.ct td:last-child{color:var(--teal);font-weight:600}.ct td:first-child{font-weight:600}
+.fg{display:grid;gap:24px;grid-template-columns:2fr 1fr 1fr 1.4fr}footer a{color:var(--mut);text-decoration:none;line-height:2}footer a:hover{color:var(--co)}footer form{display:grid;gap:8px}
+.sc2{display:none}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr}.sc2{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);z-index:7}.sc2 .btn{display:block;text-align:center}#cfab{bottom:74px}.bt{bottom:130px}footer{padding-bottom:90px}}
+</style></head><body><a class="skip" href="#aud">Skip to content</a>
+<div id="pg"></div><header><div class="w"><a class="logo" href="#top"><img src="assets/logo-mark.svg" alt="" width="34" height="34" style="vertical-align:middle;margin-right:8px">PawImpact</a><button class="ic mb" onclick="document.querySelector('header nav').classList.toggle('open')" aria-label="Menu">☰</button><nav><a href="#aud">Who it’s for</a><a href="#how">How it works</a><a href="#studio">AI studio</a><a href="#dogs">Dogs</a><a href="#case">Case study</a><a href="#packages">Sponsor</a><a href="#faq">FAQ</a><a class="btn" href="app.html">Open platform</a><button class="ic" id="th" aria-label="Toggle theme">🌓</button></nav></div></header>
+<div class="hero" id="top"><div class="w"><div>
+<h1>Good brands. Happy pets. Greater impact.</h1><p>Connect your brand with meaningful pet causes, powerful stories, and campaigns that make a difference.</p><br>
+<a class="btn" href="#campaigns">Explore campaigns</a> <a class="btn w2" href="#join">Become a partner</a><div class="tr"><span>✓ Consent-first</span><span>✓ Human-approved AI</span><span>✓ Honest reporting</span></div><img class="hh" src="assets/hero.svg" alt="Illustration of three shelter dogs wearing collars"></div>
+<div class="live" aria-label="Sample campaign preview"><span class="dot"></span><b>Live preview (sample)</b><h3 style="margin:10px 0 0">Better Days for Shelter Dogs</h3><small style="opacity:.8">Hearth & Kibble Co. × Riverbend Rescue</small>
+<div class="bar" style="background:#ffffff25"><i data-w="72"></i></div>
+<div class="row"><span>Reach</span><b id="lv1">212,400</b></div><div class="row"><span>Adoption inquiries</span><b id="lv2">31</b></div><div class="row"><span>Adoptions confirmed by shelter</span><b>2</b></div></div></div></div>
+<div class="w"><div class="note">Demo concept. All brands, dogs, shelters and figures are fictional sample data.</div></div>
+
+<div class="mq" aria-label="Sample partners"><div id="mqd"></div></div>
+<section id="aud"><div class="w"><h2>Built for every partner in the story</h2><p class="lead">Pick your role to see what PawImpact does for you.</p><div class="tabs" id="at"></div><div class="card aud" id="ab"></div></div></section>
+<section id="how"><div class="w"><h2>How PawImpact works</h2><p class="lead">One connected flow from sponsorship to outcomes shelters can confirm.</p>
+<div class="tabs" role="tablist" id="ht"></div><div class="card" id="hb"></div></div></section>
+
+<section id="features"><div class="w"><h2>Everything in one platform</h2><div class="grid">
+<div class="card">🤝<h3>Brand partnerships</h3>Pipeline from first contact to active sponsorship, with deliverables.</div>
+<div class="card">📣<h3>Campaign management</h3>Plan, launch and track cause marketing campaigns and timelines.</div>
+<div class="card">🐕<h3>Shelter and adoption</h3>Dog profiles and an inquiry register. Inquiries are never counted as adoptions.</div>
+<div class="card">🎬<h3>Content studio</h3>Idea to published pipeline with shelter and human approval.</div>
+<div class="card">🎗️<h3>Events and fundraising</h3>Sponsor packages, registrations, pledges kept apart from funds received.</div>
+<div class="card">🔒<h3>Privacy first</h3>Role-based access, consent for photos, youth and donor data protected.</div></div></div></section>
+
+<section id="ai"><div class="w"><h2>AI assistant: PawImpact Intelligence</h2><p class="lead">Drafts captions, proposals, emails and scripts. You edit and approve every draft before anything goes out.</p>
+<div class="card" style="margin-top:22px"><div class="chips" id="aic"></div><p id="aio" style="min-height:90px;font-size:17px;margin:16px 0"></p><span class="tag o">Simulated sample output. Needs human approval.</span></div></div></section>
+
+<section id="studio"><div class="w"><h2>AI studio</h2><p class="lead">Generate a campaign idea, a dog story or a sponsor pitch. Edit it, copy it, and approve it before it goes anywhere.</p>
+<div class="tabs" id="stt"></div><div class="card"><div id="stf"></div><div id="so" class="card" style="background:var(--gray)"></div><p style="margin:12px 0 0"><span class="tag o" id="sg"></span> <button class="btn s" onclick="copyOut()">Copy text</button></p></div></div></section>
+<section id="auto"><div class="w"><h2>Automation that keeps campaigns moving</h2><p class="lead">Rules handle the follow-ups. Anything that sends or publishes waits for a person.</p>
+<div class="flow" id="fl"></div><div class="card" id="fb"></div></div></section>
+
+<section id="story"><div class="w"><h2>Video storyboard studio</h2><p class="lead">Plan a shelter dog story scene by scene. Every scene needs review before it goes public.</p>
+<div class="sc"><div class="chips" id="sbc" style="flex-direction:column;align-items:stretch"></div><div class="card" id="sbb"></div></div></div></section>
+<section id="dogs"><div class="w"><h2>Meet the dogs (fictional demo profiles)</h2><div class="chips" id="dc"></div><div class="grid" id="dg"></div></div></section>
+
+<section id="campaigns"><div class="w"><h2>Featured campaigns</h2><div class="grid" id="cg"></div></div></section>
+
+<section id="case"><div class="w"><h2>Case study: Better Days for Shelter Dogs</h2><p class="lead">A fictional campaign shown end to end. Every figure is sample data.</p>
+<div class="grid" id="tl"></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))"><div class="card"><small>Reach (marketing)</small><b class="big2" data-n="212400">0</b></div><div class="card"><small>Adoption inquiries</small><b class="big2" data-n="31">0</b></div><div class="card"><small>Adoptions confirmed by shelter</small><b class="big2" data-n="2">0</b></div><div class="card"><small>Pledged vs received (USD)</small><b class="big2">$24,000 / $14,500</b></div></div>
+<p style="margin-top:18px"><button class="btn" onclick="dlReport()">Download sample sponsor report</button> <small style="color:var(--mut)">A short text file with the figures above.</small></p></div></section>
+<section id="events"><div class="w"><h2>Next event: Run With Rescue (sample)</h2><p class="lead">A dog-friendly charity run with sponsor branding, volunteers and shelter dogs on site.</p><br><div class="cd" id="cd"></div></div></section>
+
+<section id="packages"><div class="w"><h2>Sponsorship packages</h2><p class="lead">Sample packages. Amounts are illustrative only.</p><div class="grid">
+<div class="card pk"><b>Presenting sponsor</b><b class="p">$25,000</b>Naming rights, 3 sponsored stories, event booth, full impact report.</div>
+<div class="card pk"><b>Gold sponsor</b><b class="p">$10,000</b>Logo on bibs and tents, 2 sponsored stories, impact summary.</div>
+<div class="card pk"><b>Silver sponsor</b><b class="p">$5,000</b>Logo on event page, 1 sponsored story.</div>
+<div class="card pk"><b>Community partner</b><b class="p">In kind</b>Product donations and shout-outs on social.</div></div></div></section>
+
+<section id="impact"><div class="w"><h2>Impact, reported honestly</h2><p class="lead">Reach, funds received and confirmed adoptions are always shown separately.</p><br>
+<div class="stats"><div><b data-n="1240000">0</b>impressions (sample)</div><div><b data-n="58200" data-p="$">0</b>funds received (sample)</div><div><b data-n="47">0</b>adoption inquiries (sample)</div><div><b data-n="5">0</b>adoptions confirmed (sample)</div></div></div></section>
+
+<section id="tools"><div class="w"><h2>Try it yourself</h2><p class="lead">Two small demos. Estimates are illustrative, and nothing is stored or charged.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<div class="card"><h3>Sponsor impact estimator</h3><label>Budget: <b id="bv">$10,000</b><input type="range" id="bs" min="2000" max="50000" step="1000" value="10000"></label>
+<span class="big" id="e1"></span>sponsored stories<span class="big" id="e2"></span>estimated reach<span class="big" id="e3"></span>dogs featured<small>Illustrative estimate only. Real results depend on the campaign.</small></div>
+<div class="card"><h3>Pledge to a shelter (demo)</h3><div class="chips" id="dn"></div><br><button class="btn" onclick="pledge()">Make a demo pledge</button><p id="dm" style="min-height:48px"></p><small>A pledge is a promise, not money received. Funds are counted only once the shelter confirms receipt.</small></div>
+<div class="card"><h3>Volunteer sign-up (demo)</h3><form onsubmit="event.preventDefault();this.innerHTML='<b>Thanks. Sign-up noted (demo only).</b>'" style="margin:0"><input required placeholder="Name"><select><option>Dog walker</option><option>Event helper</option><option>Photographer</option><option>Youth mentor</option></select><button class="btn">Sign up</button></form></div></div></div></section>
+<section id="voices"><div class="w"><h2>What partners say (fictional examples)</h2><div class="grid">
+<div class="card q">“We finally see which sponsored stories led to inquiries.”<small>Marketing lead, fictional pet food brand</small></div>
+<div class="card q">“Approvals and consent are built in, so we feel safe sharing our dogs.”<small>Shelter director, fictional rescue</small></div>
+<div class="card q">“Follow-ups used to slip. Now they’re drafted for us to approve.”<small>Campaign manager, fictional agency</small></div></div></div></section>
+<section id="compare"><div class="w"><h2>Why not spreadsheets and email?</h2><div class="card wrap" style="padding:0"><table class="ct"><tr><th><th>Without PawImpact<th>With PawImpact</tr>
+<tr><td>Sponsor tracking<td>Scattered spreadsheets<td>One pipeline with deliverables</tr>
+<tr><td>Reporting<td>Reach, pledges and adoptions blurred together<td>Always reported separately</tr>
+<tr><td>Approvals<td>Long email chains<td>Built-in review and consent</tr>
+<tr><td>Follow-ups<td>Easy to forget<td>Drafted by AI, approved by you</tr>
+<tr><td>Privacy<td>Shared folders<td>Role-based access</tr></table></div></div></section>
+<section id="faq"><div class="w"><h2>Questions</h2>
+<details><summary>Is an adoption inquiry the same as an adoption?</summary><p>No. Only the shelter can confirm an adoption, and PawImpact reports them separately.</p></details>
+<details><summary>Are pledges counted as funds received?</summary><p>No. Proposed, signed, invoiced and received amounts are tracked separately.</p></details>
+<details><summary>Does the AI publish on its own?</summary><p>Never. Every draft is editable and needs human approval.</p></details>
+<details><summary>How are photos and youth data handled?</summary><p>Consent is required before publishing identifiable photos or videos, and participant records are limited to authorized adults.</p></details></div></section>
+
+<section id="join"><div class="w"><h2>Let’s create something that makes a difference.</h2><p class="lead">This demo form stores nothing and sends nothing.</p>
+<form onsubmit="event.preventDefault();this.innerHTML='<b>Thanks. Request noted (demo only).</b>'"><input required placeholder="Organization"><input required type="email" placeholder="Email"><select><option>Become a sponsor</option><option>Partner with us</option><option>Shelter or nonprofit</option></select><button class="btn">Send request</button></form></div></section>
+<button class="ic bt" id="bt" onclick="scrollTo({top:0})" aria-label="Back to top">↑</button><footer><div class="w fg"><div><img src="assets/logo.svg" alt="PawImpact" height="34" style="display:block;margin-bottom:10px"><p style="max-width:320px">A proposed product concept with fictional sample data. Not affiliated with any real brand or shelter.</p></div><div><b>Explore</b><br><a href="#aud">Who it’s for</a><br><a href="#studio">AI studio</a><br><a href="#case">Case study</a><br><a href="#packages">Sponsor packages</a></div><div><b>Platform</b><br><a href="app.html">Open the platform</a><br><a href="#faq">FAQ</a><br><a href="#join">Contact</a></div><form onsubmit="event.preventDefault();this.innerHTML='<b>Thanks. Noted (demo only).</b>'" style="margin:0"><b>Updates</b><input required type="email" placeholder="Email" aria-label="Email"><button class="btn s">Subscribe</button></form></div></footer>
+<div class="sc2"><a class="btn" href="#join">Become a partner</a></div>
+<script>
+const $=s=>document.querySelector(s);const AS=n=>(window.ASSETS&&ASSETS[n])||"assets/"+n+".svg";
+const H=[["Partner","A brand and a shelter agree on goals, budget and deliverables. The pipeline tracks every stage."],["Tell the story","Shelter dogs get consented, shelter-approved storytelling across social, video and email."],["Run the event","Adoption days and charity runs bring sponsors, volunteers and dogs together."],["Measure","Reach, funds received and confirmed adoptions are reported separately to sponsors and shelters."]];
+$("#ht").innerHTML=H.map((h,i)=>`<button role="tab" class="${i?"":"on"}" onclick="tab(${i})">${i+1}. ${h[0]}</button>`).join("");
+function tab(i){document.querySelectorAll("#ht button").forEach((b,j)=>b.classList.toggle("on",i==j));$("#hb").innerHTML=`<h3>${H[i][0]}</h3>${H[i][1]}`}tab(0);
+const A=[["Caption","Biscuit arrived shy. Eight weeks of patient training later, he’s ready for his forever sofa. Meet him this Saturday. 🐾 #AdoptDontShop"],["Sponsor proposal","Proposal: sponsor 3 shelter dog stories and an adoption day. Your brand reaches first-time dog owners while funding enrichment for 38 dogs."],["Fundraising email","Subject: Help Maple find a home. Maple is a gentle senior who greets every volunteer. Join us on adoption day and help us reach our goal."],["Video script","Scene 1: Biscuit’s arrival. Scene 2: first training day. Scene 3: volunteer interview. Scene 4: calm walk. Scene 5: call to action."]];
+$("#aic").innerHTML=A.map((a,i)=>`<button class="${i?"":"on"}" onclick="ai(${i})">${a[0]}</button>`).join("");
+let tm;function ai(i){document.querySelectorAll("#aic button").forEach((b,j)=>b.classList.toggle("on",i==j));clearInterval(tm);const t=A[i][1];let n=0;tm=setInterval(()=>{$("#aio").textContent=t.slice(0,++n);if(n>=t.length)clearInterval(tm)},14)}ai(0);
+const F=[["Trigger","A sponsor deliverable is 3 days overdue, or a new adoption inquiry arrives."],["AI draft","PawImpact Intelligence drafts a follow-up email or task from the campaign record."],["Approval","A person reviews and edits the draft. Nothing is sent without approval."],["Action","The message is sent, the shelter is notified and the run is logged."]];
+$("#fl").innerHTML=F.map((f,i)=>`<button class="${i?"":"on"}" onclick="fl(${i})">${f[0]}</button>${i<3?"<span>→</span>":""}`).join("");
+function fl(i){document.querySelectorAll("#fl button").forEach((b,j)=>b.classList.toggle("on",i==j));$("#fb").innerHTML=`<h3>${F[i][0]}</h3>${F[i][1]}`}fl(0);
+const D=[["Biscuit","Medium","dog-1","#f2994a55","Lab mix, 3 yrs. Calm on a lead."],["Juniper","Large","dog-2","#2a9d8f44","Shepherd mix, 1 yr. Loves puzzle toys."],["Maple","Medium","dog-3","#e8664a44","Beagle, 6 yrs. Great with kids."],["Pip","Small","dog-4","#dcebf5","Terrier mix, 2 yrs. Quick learner."]];
+$("#dc").innerHTML=["All","Small","Medium","Large"].map((s,i)=>`<button class="${i?"":"on"}" onclick="dogs('${s}',this)">${s}</button>`).join("");
+function dogs(s,b){if(b){document.querySelectorAll("#dc button").forEach(x=>x.classList.remove("on"));b.classList.add("on")}$("#dg").innerHTML=D.filter(d=>s=="All"||d[1]==s).map(d=>`<div class="card"><img class="di" src="${AS(d[2])}" alt="Illustration of ${d[0]}, a demo dog"><b>${d[0]}</b> <span class="tag">Demo</span><br><small>${d[4]}</small></div>`).join("")}dogs("All");
+const C=[["Better Days for Shelter Dogs","Hearth & Kibble Co.",72],["Run With Rescue Marathon","Pawsitive Retail",45],["Back-to-Basics Youth Training","VetBright Labs",88]];
+$("#cg").innerHTML=C.map(c=>`<div class="card"><b>${c[0]}</b><br><small>Sponsor: ${c[1]}</small><div class="bar"><i data-w="${c[2]}"></i></div><small>${c[2]}% of goal (sample)</small></div>`).join("");
+const T=new Date("2027-03-14T09:00:00");function tick(){let d=Math.max(0,T-new Date()),x=[["days",864e5],["hours",36e5],["min",6e4]];$("#cd").innerHTML=x.map(u=>{const v=Math.floor(d/u[1]);d-=v*u[1];return`<div><b>${v}</b>${u[0]}</div>`}).join("")}tick();setInterval(tick,3e4);
+setInterval(()=>{const a=$("#lv1");a.textContent=(+a.textContent.replace(/,/g,"")+Math.floor(Math.random()*40)).toLocaleString()},2500);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target;if(el.dataset.w)el.style.width=el.dataset.w+"%";if(el.dataset.n){const t=+el.dataset.n,s=performance.now(),p0=el.dataset.p||"";(function f(n){const p=Math.min(1,(n-s)/1000);el.textContent=p0+Math.round(t*p).toLocaleString();if(p<1)requestAnimationFrame(f)})(s)}}));
+document.querySelectorAll("[data-w],[data-n]").forEach(e=>io.observe(e));
+
+const P=["Hearth & Kibble Co.","LeashLine Gear","VetBright Labs","Pawsitive Retail","Wagtail Wellness","Riverbend Rescue","Harbor Paws","K9 Youth (demo)"];
+$("#mqd").innerHTML=[...P,...P].map(p=>`<span>${p}</span>`).join("");
+const SB=[["Arrival","Biscuit enters the shelter. Caption: “Day one.”","Draft"],["First training","Close-up of paws and treats. Interview: trainer.","In review"],["Volunteer voice","Volunteer shares what Biscuit taught them.","Needs consent"],["Calm walk","Steady lead walk at the park.","Approved"],["Call to action","Adoption day details and sponsor thank-you.","Draft"]];
+$("#sbc").innerHTML=SB.map((x,i)=>`<button class="${i?"":"on"}" onclick="sb(${i})">Scene ${i+1}: ${x[0]}</button>`).join("");
+function sb(i){document.querySelectorAll("#sbc button").forEach((b,j)=>b.classList.toggle("on",i==j));$("#sbb").innerHTML=`<img class="di" src="${AS('dog-'+(i%4+1))}" alt="Storyboard scene illustration"><h3>${SB[i][0]}</h3>${SB[i][1]}<br><br><span class="tag ${SB[i][2]=="Approved"?"":"o"}">${SB[i][2]}</span>`}sb(0);
+function est(){const b=+$("#bs").value;$("#bv").textContent="$"+b.toLocaleString();$("#e1").textContent=Math.max(1,Math.round(b/3500));$("#e2").textContent=(b*28).toLocaleString();$("#e3").textContent=Math.max(2,Math.round(b/1500))}$("#bs").oninput=est;est();
+let amt=25;$("#dn").innerHTML=[10,25,50,100].map(a=>`<button class="${a==25?"on":""}" onclick="amt=${a};document.querySelectorAll('#dn button').forEach(x=>x.classList.toggle('on',x.textContent=='$${a}'))">$${a}</button>`).join("");
+function pledge(){$("#dm").innerHTML=`<b>Demo pledge of $${amt} recorded.</b> Status: pledged, not received.`}
+$("#th").onclick=()=>{const d=document.documentElement,dk=d.dataset.theme?d.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;d.dataset.theme=dk?"light":"dark"};
+addEventListener("scroll",()=>{const h=document.documentElement;$("#pg").style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+"%";$("#bt").style.display=scrollY>600?"block":"none"});
+document.querySelectorAll("header nav a").forEach(a=>a.addEventListener("click",()=>document.querySelector("header nav").classList.remove("open")));
+const FACTS="PawImpact is a fictional demo concept: a platform where pet brands, shelters and youth programs run cause marketing campaigns together. Features: brand partnership pipeline, campaign management, shelter and dog profiles with an adoption inquiry register (an inquiry is never an adoption), content studio with approval, events and sponsorship packages (Presenting $25,000, Gold $10,000, Silver $5,000, Community in kind), fundraising where pledges are kept separate from funds received, impact analytics that separate reach, funds and confirmed adoptions, an AI assistant and automation where a person approves everything. Consent is required for photos and youth data. All brands, dogs and figures are fictional.";
+const NOTE="AI draft. Needs human approval before use.";
+async function live(){try{return window.claude&&await claude.use("sample")}catch(e){return null}}
+async function aiRun(prompt,fb,el,tagEl){const s=await live();if(s){el.textContent="Thinking…";tagEl.textContent=NOTE;try{await s(prompt,{cache:false,onText:({text})=>{el.textContent=text}})}catch(e){el.textContent=e.code=="not_granted"?"Permission to use AI was declined. You can try again.":e.code=="rate_limited"?"AI is busy. Try again in a moment.":"AI is unavailable right now. Try again shortly."}return}
+tagEl.textContent="Simulated sample output. Live AI runs when this page is opened in Claude. "+NOTE;for(let i=0;i<=fb.length;i+=5){el.textContent=fb.slice(0,i);await new Promise(r=>setTimeout(r,12))}el.textContent=fb}
+const ST=["Campaign idea","Dog story","Sponsor pitch"];let sti=0;
+const sel=(id,l,o)=>`<label>${l}<select id="${id}">${o.map(x=>`<option>${x}</option>`).join("")}</select></label>`;
+function studio(i){sti=i;document.querySelectorAll("#stt button").forEach((b,j)=>b.classList.toggle("on",i==j));
+const f=[sel("s1","Brand type",["Pet food","Accessories","Veterinary","Pet retail"])+sel("s2","Goal",["Shelter dog adoptions","Donations","Community awareness"])+sel("s3","Budget",["$5,000","$10,000","$25,000"]),
+sel("s1","Dog",D.map(d=>d[0]))+sel("s2","Tone",["Warm and hopeful","Playful","Direct call to action"]),
+`<label>Company name<input id="s1" placeholder="e.g. Sunny Paws Foods"></label>`+sel("s3","Package",["Presenting ($25,000)","Gold ($10,000)","Silver ($5,000)","Community (in kind)"])][i];
+$("#stf").innerHTML=f+`<button class="btn" onclick="runStudio()">Generate with AI</button>`;$("#so").textContent="";$("#sg").textContent=""}
+function runStudio(){const v=id=>($("#"+id)||{}).value||"";let p,fb;
+if(sti==0){p=`Write a concise cause marketing campaign concept for a fictional ${v("s1")} brand partnering with a fictional shelter. Goal: ${v("s2")}. Budget: ${v("s3")}. Include a name, objective, audience, 3 channels, 3 KPIs and one story idea. Label figures as estimates. Under 170 words. Plain text.`;fb=`Campaign: “Every Dog Deserves a Sofa”\nObjective: ${v("s2")} using a ${v("s3")} budget from a ${v("s1")} brand.\nAudience: first-time dog owners and local families.\nChannels: Instagram, YouTube shorts, email.\nKPIs: story views, adoption inquiries (not adoptions), sponsor deliverables completed.\nStory idea: follow one shelter dog through eight weeks of training. Figures are estimates.`}
+else if(sti==1){const d=D.find(x=>x[0]==v("s1"))||D[0];p=`Write a short, ${v("s2")} adoption story for a fictional shelter dog named ${d[0]} (${d[4]}). Include arrival, personality, training progress and an adoption call to action. Do not claim real events. Under 130 words. Plain text.`;fb=`${d[0]} arrived at the shelter unsure of the world. ${d[4]} With patient, positive training and a lot of volunteer walks, ${d[0]} learned to trust new faces. Now ${d[0]} is ready for a home. Visit the shelter to meet ${d[0]}. (Fictional demo story. Needs shelter approval before publishing.)`}
+else{p=`Write a short sponsorship pitch to ${v("s1")||"a pet brand"} for the ${v("s3")} package on PawImpact. Mention reach and impact reporting, keep claims modest and label figures as illustrative. Under 150 words. Plain text.`;fb=`Hi ${v("s1")||"there"} team,\n\nWe’d love to invite you to join a shelter dog campaign as a ${v("s3")} partner. Your brand would feature in sponsored stories and on event materials, with an impact report that separates audience reach, funds received and confirmed adoptions. Figures shown in our demo are illustrative only.\n\nCould we find 20 minutes next week?`}
+aiRun(p,fb,$("#so"),$("#sg"))}
+function copyOut(){try{navigator.clipboard.writeText($("#so").textContent);$("#sg").textContent="Copied. "+NOTE}catch(e){}}
+let ch=[],chOpen=false,chBusy=false;const E=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
+function fbk(q){q=q.toLowerCase();if(/price|cost|package|sponsor/.test(q))return"Sample packages: Presenting $25,000, Gold $10,000, Silver $5,000, and Community (in kind). Amounts are illustrative.";if(/adopt|inquir/.test(q))return"An adoption inquiry is not an adoption. Only the shelter can confirm one, and PawImpact reports them separately.";if(/photo|youth|privacy|consent/.test(q))return"Consent is required before publishing identifiable photos or videos, and youth and donor records are limited to authorized adults.";if(/ai|automat/.test(q))return"The AI drafts captions, proposals and emails. Automation follows up on deliverables and inquiries. A person approves anything that goes out.";return"PawImpact connects pet brands, shelters and youth programs: partnerships, campaigns, dog profiles, content, events, fundraising and honest impact reporting. Everything shown is fictional demo data."}
+function chatW(){let d=$("#cw");if(!d){d=document.createElement("div");d.id="cw";d.setAttribute("role","dialog");d.setAttribute("aria-label","Ask PawImpact");document.body.appendChild(d)}d.className=chOpen?"open":"";
+d.innerHTML=`<div class="ch"><b>✨ Ask PawImpact</b><button class="ic" onclick="chOpen=false;chatW()" aria-label="Close">✕</button></div><div class="cm" id="cm">${ch.length?ch.map(m=>`<div class="mm ${m.r}">${E(m.t||"Thinking…")}</div>`).join(""):'<div class="mm a">Hi! Ask about packages, adoptions, privacy or how the AI works. This is a demo assistant.</div>'}</div><div class="cq">${["What are the sponsor packages?","Is an inquiry an adoption?","How is privacy handled?"].map(q=>`<button class="ic" onclick="chatAsk(this.textContent)">${q}</button>`).join("")}</div><div class="cf"><input id="ci" aria-label="Your question" placeholder="Ask a question…" onkeydown="if(event.key=='Enter')chatAsk(this.value)"><button class="btn" onclick="chatAsk($('#ci').value)">Send</button></div>`;$("#cm").scrollTop=1e9}
+async function chatAsk(q){q=(q||"").trim();if(!q||chBusy)return;chOpen=true;chBusy=true;ch.push({r:"u",t:q});const me={r:"a",t:""};ch.push(me);chatW();const up=t=>{me.t=t;const l=$("#cm .mm:last-child");if(l)l.innerHTML=E(t||"Thinking…");$("#cm").scrollTop=1e9};const s=await live();
+if(s){const h=ch.slice(0,-1).slice(-7).map(m=>({role:m.r=="u"?"user":"assistant",content:m.t}));h[h.length-1].content=`You are the website assistant for PawImpact. Answer only from these facts and keep answers under 90 words. If unsure, say so. Never promise real results.\nFacts: ${FACTS}\n\nQuestion: ${q}`;try{await s(h,{cache:false,onText:({text})=>up(text)})}catch(e){up("AI is unavailable right now. Try again shortly.")}}
+else{const t=fbk(q);for(let i=0;i<=t.length;i+=6){up(t.slice(0,i));await new Promise(r=>setTimeout(r,12))}up(t)}chBusy=false;chatW()}
+$("#stt").innerHTML=ST.map((t,i)=>`<button class="${i?"":"on"}" onclick="studio(${i})">${t}</button>`).join("");studio(0);
+const fb=document.createElement("button");fb.id="cfab";fb.className="btn";fb.textContent="✨ Ask AI";fb.onclick=()=>{chOpen=!chOpen;chatW()};document.body.appendChild(fb);chatW();
+
+const AU=[["Brands","Find shelters and causes that fit your audience, then run sponsorships you can actually measure.",["Pipeline from first contact to active partnership","Deliverables tracked and reminded","Impact reports that separate reach, funds and adoptions"],"Become a sponsor"],["Shelters","Get visibility for your dogs while staying in control of every story and photo.",["Dog profiles and an inquiry register","You approve what gets published","Only you confirm an adoption"],"List your shelter"],["Youth programs","Run mentoring and dog training programs with privacy built in.",["Participant records limited to authorized adults","Guardian consent before any photo or video","Program outcomes in one place"],"Start a program"]];
+document.getElementById("at").innerHTML=AU.map((a,i)=>`<button class="${i?"":"on"}" onclick="aud(${i})">${a[0]}</button>`).join("");
+function aud(i){document.querySelectorAll("#at button").forEach((b,j)=>b.classList.toggle("on",i==j));const a=AU[i];document.getElementById("ab").innerHTML=`<h3>${a[0]}</h3><p>${a[1]}</p><ul>${a[2].map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn" href="#join">${a[3]}</a>`}aud(0);
+document.getElementById("tl").innerHTML=[["Jan","Partnership signed","Brand and shelter agree on goals and deliverables."],["Feb","Stories go live","Three approved dog stories reach first-time owners."],["Mar","Adoption day","Volunteers, sponsor booth and shelter dogs on site."],["Apr","Report delivered","Sponsor and shelter receive separate, honest reports."]].map(t=>`<div class="card tlc"><b>${t[0]}</b><strong>${t[1]}</strong><br><small>${t[2]}</small></div>`).join("");
+async function dlReport(){const t="PawImpact sample sponsor report (fictional demo data)\n\nCampaign: Better Days for Shelter Dogs\nReach: 212,400 (marketing)\nAdoption inquiries: 31 (not adoptions)\nAdoptions confirmed by shelter: 2\nPledged: $24,000\nReceived: $14,500\n\nReach, funds and confirmed adoptions are reported separately.";try{const d=window.claude&&await claude.use("downloads");if(d)return await d.save({filename:"pawimpact-sample-report.txt",data:t})}catch(e){}const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/plain"}));a.download="pawimpact-sample-report.txt";a.click()}
+</script></body></html>
